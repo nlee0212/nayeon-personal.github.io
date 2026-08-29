@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 플랜 A / B · BALI 09.03–09.08</title>
+<meta name="description" content="비치클럽 하나를 살릴지 말지">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="topnav"><div class="wrap"><div class="navrow"><a class="np" href="index.html"><span class="no">00</span>개요</a><a class="np" href="1-plan.html" aria-current="page"><span class="no">01</span>플랜 A / B</a><a class="np" href="2-timeline.html"><span class="no">02</span>타임라인</a><a class="np" href="3-resort.html"><span class="no">03</span>리조트 쓰기</a><a class="np" href="4-booking.html"><span class="no">04</span>예약 보드</a><a class="np" href="5-brief.html"><span class="no">05</span>투어 브리핑</a><a class="np" href="6-pass.html"><span class="no">06</span>트래블패스</a><a class="np" href="7-cost.html"><span class="no">07</span>비용</a><a class="np" href="8-info.html"><span class="no">08</span>연락처 · 짐</a><a class="np lock" href="local/docs.html"><span class="no">09</span>🔒 문서</a></div></div></div>
+<div class="wrap">
+  <div class="phead">
+    <div class="kicker">01 · 플랜 A / B</div>
+    <h1>지금 결정할 단 하나</h1>
+    <p class="lede">비치클럽 하나를 살릴지 말지</p>
+  </div>
+</div>
+<section><div class="wrap">
+<div class="planbar" style="margin-top:0">
+  <div class="switch" role="group" aria-label="플랜 선택">
+    <button id="btnA" aria-pressed="true">Plan A · 리조트 우선</button>
+    <button id="btnB" aria-pressed="false">Plan B · 비치클럽</button>
+  </div>
+  <div class="planhint" id="planhint"></div>
+</div>
+<p class="sdesc" style="margin-top:20px">스노클링을 빼면서 9/4 하루가 통째로 비었습니다. 그 하루를 <b>룸비니에서 다 쓸지</b>, 아니면 <b>절벽 데이클럽 하나만 끼울지</b> — 이 선택이 Malini 선셋의 날짜와 마지막 날 공항 버퍼까지 같이 결정합니다.</p>
+<table class="cmp">
+      <tr><th style="width:130px"></th><th class="pick">A · 짐바란 (추천)</th><th>B · 스미냑까지</th></tr>
+      <tr><td>컨셉</td><td class="pick">숙소에서 가장 가까운 곳에서 칵테일 + 선셋. 추가요금 없음</td><td>스미냑 원조 비치바로 마지막 선셋</td></tr>
+      <tr><td>9/4 낮</td><td class="pick">룸비니 종일 — 플로팅 조식, 전용 풀, 룸서비스</td><td>룸비니 오전 → 15:45 Locca</td></tr>
+      <tr><td>9/4 선셋</td><td class="pick">Sunset Beach Bar &amp; Grill · <b>차로 3분</b> · 입장료 없음</td><td>Locca Sea House · 차로 15분 · 미니멈 없는 구역</td></tr>
+      <tr><td>9/7 오후</td><td class="pick">Locca Sea House · 오션뷰 · 미니멈 없음</td><td>KU DE TA 스미냑 · 캣블링 추천 비치바</td></tr>
+      <tr><td>공항까지</td><td class="pick">뜨갈왕이 <b>25분</b></td><td>스미냑 45분</td></tr>
+      <tr><td>공항 버퍼</td><td class="pick">2시간 25분 (19:00 출발)</td><td>2시간 25분 (18:45 출발 조건)</td></tr>
+      <tr><td>추가 입장료</td><td class="pick"><b>없음</b> — 주문한 만큼만</td><td><b>없음</b> — 일반 좌석 기준</td></tr>
+      <tr><td>이 안의 약점</td><td class="pick">4일 내내 짐바란권만 봄</td><td>마지막 날 이동 45분, 시간 관리 필요</td></tr>
+    </table></div></section>
+<div class="wrap"><div class="pager"><a class="pg" href="index.html"><span class="dir">← 이전</span><span class="ttl">00 개요</span></a><a class="pg next" href="2-timeline.html"><span class="dir">다음 →</span><span class="ttl">02 타임라인</span></a></div></div>
+<footer><div class="wrap">
+  <div>BALI OPS · 09.03–09.08.2026 · 일몰 18:15 기준 · 이동시간은 발리 교통 상황 기준 추정치</div>
+  <div>로컬 전용 사이트 · 컨펌넘버와 e-티켓은 09 문서 페이지 · 공개 배포 시 local/ 폴더는 제외하세요</div>
+</div></footer>
+
+<button class="fab" id="fab">💬 물어보기</button>
+<div class="panel" id="panel" role="dialog" aria-label="일정 질문 채팅">
+  <div class="ptop">
+    <div><b>일정 도우미</b><small id="modelLbl">claude-sonnet-4-6</small></div>
+    <button id="close" aria-label="닫기">×</button>
+  </div>
+  <div class="keyrow">
+    <input id="apikey" type="password" placeholder="sk-ant-... (내 API 키)" autocomplete="off">
+    <input id="model" type="text" value="claude-sonnet-4-6" style="flex:0 0 140px" aria-label="모델">
+    <button id="savekey">저장</button>
+    <div class="note">키는 이 브라우저에만 저장되고 서버·저장소로는 전송되지 않습니다. 공용 PC에서는 저장하지 말고 한 번만 붙여넣어 쓰세요.</div>
+  </div>
+  <div class="msgs" id="msgs"></div>
+  <div class="chips" id="chips"></div>
+  <div class="pbot">
+    <textarea id="input" placeholder="예: 9/7에 Oneeighty 빼면 몇 시에 공항 도착해?"></textarea>
+    <button id="send">전송</button>
+  </div>
+</div>
+<div class="lb" id="lb"><button class="x" id="lbx" aria-label="닫기">×</button><img id="lbimg" alt=""></div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

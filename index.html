@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nayeon | Bali Trip Planner</title>
+  <meta name="description" content="나연의 발리 여행 계획과 여행 자료를 한 번에 정리한 GitHub Pages 메인 페이지" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <style>
+    :root {
+      --bg: #07161d;
+      --bg-2: #0d2130;
+      --panel: rgba(17, 35, 44, 0.9);
+      --panel-strong: #122b38;
+      --line: rgba(144, 191, 201, 0.18);
+      --text: #edf6f7;
+      --muted: #9dc0c8;
+      --teal: #2bb2ab;
+      --teal-deep: #1a7f7d;
+      --gold: #f5b64a;
+      --peach: #f2815d;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+      --display: "Bricolage Grotesque", "Pretendard Variable", sans-serif;
+      --body: "Pretendard Variable", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--body);
+      background:
+        radial-gradient(700px 400px at 12% -10%, rgba(32, 115, 125, 0.55), transparent 60%),
+        radial-gradient(700px 420px at 100% 0%, rgba(238, 164, 80, 0.14), transparent 58%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(7, 22, 29, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 72px;
+    }
+
+    .brand {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav a {
+      position: relative;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--text);
+      border-color: rgba(43, 178, 171, 0.7);
+    }
+
+    .hero {
+      padding: 72px 0 52px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(46px, 7vw, 88px);
+      line-height: 0.98;
+      letter-spacing: -0.052em;
+    }
+
+    h1 .accent {
+      color: var(--teal);
+    }
+
+    .lead {
+      max-width: 620px;
+      margin-top: 20px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 12px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal-deep));
+      border-color: transparent;
+      color: #04181a;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      min-width: 120px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(16, 34, 43, 0.7);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: var(--mono);
+      font-size: 26px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(16, 34, 43, 0.96), rgba(13, 24, 31, 0.96));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .mini-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .mini-title {
+      margin: 18px 0 10px;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      font-family: var(--display);
+    }
+
+    .mini-meta {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .mini-meta div {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mini-meta strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    section {
+      padding: 62px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .section-head .idx {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    h2 {
+      margin: 8px 0 0;
+      font-family: var(--display);
+      font-size: clamp(30px, 3vw, 46px);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(18, 34, 42, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 20px 18px;
+      box-shadow: 0 14px 24px rgba(0,0,0,0.12);
+    }
+
+    .card .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.2;
+      font-family: var(--display);
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card .chip {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      padding: 7px 10px;
+      border: 1px solid rgba(43, 178, 171, 0.25);
+      border-radius: 999px;
+      background: rgba(43, 178, 171, 0.08);
+    }
+
+    .trip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .trip-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(15, 30, 38, 0.86);
+    }
+
+    .trip-item .num {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .trip-item h3 {
+      margin: 0;
+      font-size: 23px;
+      letter-spacing: -0.04em;
+      font-family: var(--display);
+    }
+
+    .trip-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .trip-item a {
+      margin-top: auto;
+      display: inline-flex;
+      width: fit-content;
+      color: var(--teal);
+      border-bottom: 1px solid rgba(43, 178, 171, 0.5);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 28px 0 54px;
+      color: var(--muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      .nav { justify-content: flex-start; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">NAYEON / TRAVEL</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#trip">Bali</a>
+        <a href="bali-2026%204/index.html">Trip Hub</a>
+        <a href="bali-2026%204/1-plan.html">Plan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Travel Journal</div>
+          <h1>Bali <span class="accent">09.03–09.08</span></h1>
+          <p class="lead">여행 계획, 숙소, 일정, 비용까지 한 번에 정리해둔 발리 여정 페이지입니다. 지금 보고 있는 이 메인 페이지는 전체 여행 허브로 연결됩니다.</p>
+
+          <div class="cta-row">
+            <a class="button primary" href="bali-2026%204/index.html">Open trip hub</a>
+            <a class="button secondary" href="bali-2026%204/4-booking.html">Booking board</a>
+          </div>
+
+          <div class="stats" aria-label="trip statistics">
+            <div class="stat">
+              <strong>5</strong>
+              <span>days</span>
+            </div>
+            <div class="stat">
+              <strong>2</strong>
+              <span>stays</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span>trip hub</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Trip summary">
+          <div class="mini-label">Current trip</div>
+          <div class="mini-title">A slow, scenic Bali reset</div>
+
+          <div class="mini-meta">
+            <div><span>Region</span><strong>Bali, Indonesia</strong></div>
+            <div><span>Flight</span><strong>ICN → DPS</strong></div>
+            <div><span>Style</span><strong>Resort + beach + sunset</strong></div>
+            <div><span>Status</span><strong>Planning set</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="trip">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="idx">TRIP</div>
+            <h2>What this trip is</h2>
+          </div>
+          <p>리조트와 해변, 일몰 루트, 숙소 예약, 비용까지 모두 연결된 발리 여행 계획을 한 페이지에서 확인할 수 있습니다.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="tag">Overview</div>
+            <h3>Travel rhythm</h3>
+            <p>일정은 여유롭게 잡고, 바다뷰와 리조트 중심으로 자연스럽게 흐르는 방식으로 설계했습니다.</p>
+            <span class="chip">Stay relaxed</span>
+          </article>
+
+          <article class="card">
+            <div class="tag">Experience</div>
+            <h3>Signature moments</h3>
+            <p>짐바란의 느긋한 해변, 우붓의 리조트 풍경, 발리 일몰을 따라가는 일정이 핵심입니다.</p>
+            <span class="chip">Sunset route</span>
+          </article>
+
+          <article class="card">
+            <div class="tag">Focus</div>
+            <h3>Everything in one place</h3>
+            <p>플랜, 타임라인, 예약 보드, 비용, 준비물까지 여행 흐름을 한 번에 관리할 수 있게 정리해두었습니다.</p>
+            <span class="chip">All connected</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="idx">PLAN</div>
+            <h2>Trip sections</h2>
+          </div>
+        </div>
+
+        <div class="trip-grid">
+          <article class="trip-item">
+            <div class="num">01</div>
+            <h3>Plan A / B</h3>
+            <p>리조트 우선 vs 비치 클럽 중심으로 정리한 플랜 비교.</p>
+            <a href="bali-2026%204/1-plan.html">Open section →</a>
+          </article>
+
+          <article class="trip-item">
+            <div class="num">02</div>
+            <h3>Timeline</h3>
+            <p>하루별 이동, 활동, 일몰 시간 기준으로 보는 발리 일정.</p>
+            <a href="bali-2026%204/2-timeline.html">Open section →</a>
+          </article>
+
+          <article class="trip-item">
+            <div class="num">03</div>
+            <h3>Resort info</h3>
+            <p>리조트와 풀빌라, 무료 편의시설, 체크포인트를 모아놓은 페이지.</p>
+            <a href="bali-2026%204/3-resort.html">Open section →</a>
+          </article>
+
+          <article class="trip-item">
+            <div class="num">04</div>
+            <h3>Booking board</h3>
+            <p>예약 상태와 체크리스트를 관리하는 보드 페이지.</p>
+            <a href="bali-2026%204/4-booking.html">Open section →</a>
+          </article>
+
+          <article class="trip-item">
+            <div class="num">05</div>
+            <h3>Briefing</h3>
+            <p>출국 전 준비와 여행 브리핑 자료를 한 번에 보관.</p>
+            <a href="bali-2026%204/5-brief.html">Open section →</a>
+          </article>
+
+          <article class="trip-item">
+            <div class="num">06</div>
+            <h3>Travel pass</h3>
+            <p>교통, 일정, 패스 정보와 참고 링크를 정리해둔 섹션.</p>
+            <a href="bali-2026%204/6-pass.html">Open section →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    BALI OPS · 2026 · GitHub Pages home
+  </footer>
+</body>
+</html>
