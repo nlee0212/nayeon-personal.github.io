@@ -61,9 +61,7 @@ const DAYS = [
     {s:16.5,e:17.5,n:'로터스폰드 · 첫 수영',p:'852㎡ 루프탑 인피니티'},
     {s:17.5,e:17.75,n:'우붓 시내로 (무료 셔틀)',p:'포시즌 데일리 셔틀 15분',k:'mv',
       note:'쇼핑을 오늘 저녁으로 당깁니다. 내일 아침을 통째로 리조트에 남기는 게 이득.'},
-    {s:17.75,e:19,n:'우붓 쇼핑 (5품목)',p:'센사티아 · 티켓투더문 · 데우스 · 요가복 · 루왁커피',
-      note:'센사티아 바디로션(Jl. Monkey Forest 64), 티켓투더문 가방(우붓점), 데우스 우붓점, 요가복(우붓 매장 밀집), 루왁커피(발리스타 커피 Jl. Karna 14). 대부분 몽키포레스트 거리 안. 캣블링 자료 — "우붓이 기념품은 제일 저렴".',
-      tags:['쇼핑 5/8']},
+    {s:17.75,e:19,n:'우붓 시내 자유시간',p:'쇼핑은 9/7로 몰았음 · 저녁 식사 위주'},
     {s:19,e:21,n:'우붓 제휴 식당 저녁',p:'트래블패스 10% + 웰컴드링크',k:'food',
       note:'Cantina Classe Ubud(이탈리안) · Habitat Bistro Ubud(퓨전) · Ankhusa Ubud(이탈리안) · Shichirin Ubud(일식) 모두 총계 10% 할인 + 웰컴드링크. 2인 약 43,000~68,000원.',
       tags:['패스 10%']},
@@ -79,30 +77,25 @@ const DAYS = [
       note:'마을 워크, 가든 투어, "발리 농부의 하루", 명상 클래스, Ibu Fera의 Life Talks, 2단 수영장 전부 무료. 마사지를 원하면 우붓 DaLa SPA 30%(전액선결제) 또는 로컬 60분 IDR 150,000~300,000(약 1만3천~2만6천원).',
       tags:['무료']},
     {s:13.5,e:21,n:'오후 자유시간 — 우붓 시내 맛집·스파',p:'포시즌 무료 셔틀 이용',
-      note:'포시즌 무료 셔틀 → 우붓 시내 자유. 아래 옵션 중 선택.<br><br>🍽️ <b>식당·카페</b><br>· Pison Ubud — 우붓 최고 카페. 논 뷰 테라스, 포크 벨리 나시고랭·레드벨벳 와플. 줄 서는 집. Jl. Monkey Forest. <a href=https://maps.google.com/?q=Pison+Ubud>구글맵</a><br>· Naughty Nuri's — 1995년 원조 폭립 와룽. 텐더한 BBQ, 마티니 유명. 2인 약 4~6만원. Jl. Raya Sanggingan 88X. 11:00~22:00. <a href=https://maps.google.com/?cid=ChIJ0xemf0Y90i0RR2RPyU-sow0>구글맵</a><br>· Ibu Oka — 우붓 바비 굴링 원조. 11시 오픈, 오후 일찍 품절. 2인 약 1만5천원. Jl. Suweta. 일찍 갈 것. <a href=https://maps.google.com/?q=Ibu+Oka+Ubud+Jl+Suweta>구글맵</a><br>· Ubud Shanti Warung — 논밭 한가운데, 나시 참푸르·가도가도. 로컬 가격, 조용한 분위기. <a href=https://maps.google.com/?q=Ubud+Shanti+Warung>구글맵</a><br><br>💆 <b>스파</b><br>· Karsa Spa — 발리니즈 60분 IDR 350,000(≈3만원). 스크럽+플라워 바스 패키지 250,000(≈2만1천원). 캄푸한 릿지 뷰, 반오픈 야외 룸. 왓츠앱 예약 필수(1주일 전). <a href=https://maps.google.com/?q=Karsa+Spa+Ubud>구글맵</a><br>· DaLa Spa (Alaya Resort, Jl. Hanoman) — 트래블패스 30% + 오전 9~13시 자체 25% 할인. 시그니처 2시간 패키지(마사지+스크럽+플라워 바스). 예약 필수. <a href=https://maps.google.com/?q=DaLa+Spa+Alaya+Ubud+Jl+Hanoman>구글맵</a><br>· 로컬 마사지 — 우붓 시내 골목, 60분 IDR 150,000~300,000(약 1만3천~2만6천원). 워크인 가능.',
+      note:'포시즌 무료 셔틀 → 우붓 시내 자유. 아래 옵션 중 선택.<br><br>🍽️ <b>식당·카페</b><br>· Pison Ubud — 우붓 최고 카페. 논 뷰 테라스, 포크 벨리 나시고랭·레드벨벳 와플. 줄 서는 집. Jl. Monkey Forest. <a href=https://maps.google.com/?q=Pison+Ubud>구글맵</a><br>· Naughty Nuri's — 1995년 원조 폭립 와룽. 텐더한 BBQ, 마티니 유명. 2인 약 4~6만원. Jl. Raya Sanggingan 88X. 11:00~22:00. <a href=https://maps.google.com/?cid=ChIJ0xemf0Y90i0RR2RPyU-sow0>구글맵</a><br>· Ibu Oka — 우붓 바비 굴링 원조. 11시 오픈, 오후 일찍 품절. 2인 약 1만5천원. Jl. Suweta. 일찍 갈 것. <a href=https://maps.google.com/?q=Ibu+Oka+Ubud+Jl+Suweta>구글맵</a><br>· Ubud Shanti Warung — 논밭 한가운데, 나시 참푸르·가도가도. 로컬 가격, 조용한 분위기. <a href=https://maps.google.com/?q=Ubud+Shanti+Warung>구글맵</a><br><br>💆 <b>스파</b><br>· Karsa Spa — 딥티슈 90분 IDR 380,000(≈32,000원, 세전) 예정. 캄푸한 릿지 뷰, 반오픈 야외 룸. 왓츠앱 예약 필수(1주일 전). 50% 디파짓. <a href=https://maps.google.com/?q=Karsa+Spa+Ubud>구글맵</a><br>· DaLa Spa (Alaya Resort, Jl. Hanoman) — 트래블패스 30% + 오전 9~13시 자체 25% 할인. 시그니처 2시간 패키지(마사지+스크럽+플라워 바스). 예약 필수. <a href=https://maps.google.com/?q=DaLa+Spa+Alaya+Ubud+Jl+Hanoman>구글맵</a><br>· 로컬 마사지 — 우붓 시내 골목, 60분 IDR 150,000~300,000(약 1만3천~2만6천원). 워크인 가능.',
       tags:['자유']}
   ]},
 
-  {d:'09.07', wk:'MON', tag:'체크아웃 → 강아지요가 → 꾸따 → 공항', blocks:[
+  {d:'09.07', wk:'MON', tag:'체크아웃 → 우붓쇼핑 → 꾸따 → 공항', blocks:[
     {s:7,e:8,n:'Dharma Shanti 무료 요가',p:'마지막 기회'},
     {s:8,e:9.5,n:'조식 · Ayung Terrace',p:'',k:'food'},
     {s:9.5,e:11.25,n:'전용 풀 · 로터스폰드 · 짐 정리',p:'리조트에서 쓰는 마지막 시간',
       note:'체크아웃 후에도 짐은 맡길 수 있고, 택시투어 차량에 실어둡니다.'},
     {s:11.25,e:11.5,n:'체크아웃 · 짐 맡기기',p:''},
-    {s:11.5,e:12.5,n:'강아지 요가 (Happy Puppy Yoga)',p:'우붓 시내 · IDR 580,000/인 · 사전 예약 필수',
-      note:'그랩으로 우붓 시내 이동(10분). 45분 하타 요가 + 15분 강아지 놀이. 매트 제공. Jl. Jatayu Gang Menda No.5, Ubud. 요가 후 그랩으로 포시즌 로비 복귀(10분).',
-      links:[['예약','https://happypuppyyogabali.com/puppy-yoga-ubud']],
-      tags:['예약 필수','24시간 전 무료취소']},
-    {s:12.5,e:13,n:'포시즌 로비 · 택시투어 기사 미팅',p:'짐 차에 싣고 출발 준비',k:'mv'},
+    {s:11.5,e:13,n:'우붓 시내 쇼핑',p:'센사티아 · 티켓투더문 · 데우스 · 요가복 · 루왁커피',
+      note:'체크아웃 후 짐 로비 맡기고 그랩으로 우붓 시내 이동(10분). 센사티아(Jl. Monkey Forest 64), 티켓투더문, 데우스 우붓점, 요가복, 루왁커피(발리스타 커피 Jl. Karna 14). 쇼핑 후 그랩으로 포시즌 복귀.',
+      tags:['쇼핑']},
+    {s:13,e:13.25,n:'포시즌 로비 · 택시투어 기사 미팅',p:'짐 차에 싣고 출발 준비',k:'mv'},
     {s:13,e:14.5,n:'우붓→꾸따 이동',p:'약 1시간 30분',k:'mv',
       note:'포함 택시투어 최장 10시간(12:00–22:00). 오늘 루트: 꾸따 시내 → 소쿠베 → 산타이라운지 → 공항. 루트를 9/1까지 카톡채널에 미리 공유하세요.'},
-    {s:14.5,e:16.5,n:'꾸따 시내 쇼핑',p:'비치워크 · 디스커버리몰 · 쇼핑 마무리',
-      note:'비치워크 쇼핑몰(Jl. Pantai Kuta)에서 코코넛칩·야바 그래놀라·일립스 헤어오일·빈땅 맥주 등 쇼핑 마무리. 디스커버리몰도 해변 바로 옆.',
-      tags:['쇼핑 마무리','캣블링 추천']},
-    {s:16.5,e:17,n:'소쿠베',p:'Jl. Kartika Plaza · 선셋뷰 맥주',k:'food',
-      note:'캣블링 추천 — "일몰 보며 맥주 마시기 좋음". 꾸따 비치 선셋 뷰. 가볍게 맥주 한 잔 하고 산타이로 이동.',
-      links:[['구글맵','https://maps.app.goo.gl/1gTivEyZ2HzF5Nv99']],
-      tags:['선셋뷰','캣블링 추천']},
+    {s:14.5,e:17,n:'소쿠베 or 꾸따 맛집',p:'현지에서 선택',k:'food',
+      note:'소쿠베: 캣블링 추천, 선셋뷰 맥주, Jl. Kartika Plaza / Warung BBQ Mek Made: 폭립 IDR 55,000, 16:00 오픈, 월요일 영업, Jl. Raya Legian / Warung PacMan Kuta: 자장면·한식퓨전, 11:30~22:30, Jl. Wana Segara',
+      tags:['현지 선택']},
     {s:17,e:17.33,n:'꾸따→산타이라운지',p:'약 20분',k:'mv'},
     {s:17.33,e:18.5,n:'산타이라운지',p:'샤워 · 짐보관 · 라면과 커피 · 약 1시간',
       note:'공항 10분 거리. 여기서 씻고 갈아입고 갑니다.',
@@ -117,8 +110,6 @@ const DAYS = [
 const TASKS = [
   {id:'route',t:'9/7 택시투어 루트 카톡채널 공유',m:'루트: 꾸따 시내 → 소쿠베 선셋맥주 → 산타이라운지 → 공항.',due:'9/1',now:1,
     links:[['카톡채널','https://open.kakao.com/o/sZ7fHT9g']]},
-  {id:'puppyyoga',t:'강아지 요가 예약 (9/7 11:30)',m:'Happy Puppy Yoga 우붓 · IDR 580,000/인 · 24시간 전 무료취소',due:'9/6',now:1,
-    links:[['예약','https://happypuppyyogabali.com/puppy-yoga-ubud']]},
   {id:'jeep4',t:'바투르 지프 예약 (9/4 새벽) — 짐바란 픽업',m:'일출 투어 · 짐바란(룸비니) 픽업 가능 여부 확인 · 새벽 2~3시 출발',due:'오늘',now:1},
   {id:'evoa',t:'e-VOA 비자 + 관광세 결제 (2인)',m:'비자 약 $38/인 · 관광세 $10 또는 15만루피아 · 출국 전 필수',due:'오늘',now:1,
     links:[['e-VOA','https://evisa.imigrasi.go.id/'],['Love Bali','https://lovebali.baliprov.go.id']]},
@@ -175,7 +166,7 @@ function systemPrompt(){
 불포함: e-VOA 약 $38/인, 관광세 $10 또는 15만루피아, 택시투어 기사팁 차 1대당 $10.
 나연 멀미 심함 — 지프 탑승 1시간 전, 비행기 탑승 1시간 전 멀미약 필수.
 9/4: 새벽 2시 룸비니 출발 → 바투르 일출 지프 → 오전 복귀 → 플로팅 조식 → 리조트 휴식 → 15:00 싱글핀(워크인, DJ 16:00~, 선셋).
-9/7 마지막날 코스: 강아지 요가(11:30–12:30 우붓 시내) → 택시투어 기사 13:00 미팅 → 꾸따 시내(14:30–16:30) → 소쿠베 선셋맥주(16:30–17:00) → 산타이라운지(17:20–18:30) → 공항 약 18:40 도착.
+9/7 마지막날 코스: 우붓 시내 쇼핑(11:30–13:00) → 택시투어 기사 13:00 미팅 → 꾸따 시내(14:30–16:30) → 소쿠베 선셋맥주(16:30–17:00) → 산타이라운지(17:20–18:30) → 공항 약 18:40 도착.
 트래블패스는 투어 할인이 아니라 카페·레스토랑·스파·비치클럽 제휴 업소 할인이다.
 발리 덴파사르 공항(DPS) 국제선 출국은 보안 검색 2회, 저녁 피크 혼잡. 3시간 전 도착 필수 = 19:45 데드라인.
 모르는 건 모른다고 하고, 추측이면 추측이라고 명시하라.`;
