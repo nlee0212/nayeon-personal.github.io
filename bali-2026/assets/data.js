@@ -47,7 +47,7 @@ const DAYS = [
 
   {d:'09.05', wk:'SAT', tag:'짐바란 → 우붓', blocks:[
     {s:8,e:9.5,n:'플로팅 조식',p:'룸비니 2박 특전 1회 · 전용 풀에서',k:'food',
-      note:'체크아웃 아침 여유롭게. 전날 밤 프론트 예약 필수.',tags:['특전'],
+      note:'체크아웃 아침 여유롭게. 전날 밤 프론트 예약 필수.',tags:['특전']},
     {s:9.5,e:11.25,n:'전용 풀 마지막 · 짐 정리',p:'체크아웃 12:00',
       note:'여유 있으면 도보 7분 Samasta Lifestyle Village 산책.'},
     {s:11.25,e:12,n:'체크아웃',p:''},
@@ -77,7 +77,7 @@ const DAYS = [
       note:'마을 워크, 가든 투어, "발리 농부의 하루", 명상 클래스, Ibu Fera의 Life Talks, 2단 수영장 전부 무료. 마사지를 원하면 우붓 DaLa SPA 30%(전액선결제) 또는 로컬 60분 IDR 150,000~300,000(약 1만3천~2만6천원).',
       tags:['무료']},
     {s:13.5,e:21,n:'오후 자유시간 — 우붓 시내 맛집·스파',p:'포시즌 무료 셔틀 이용',
-      note:'포시즌 무료 셔틀 → 우붓 시내 자유. 아래 옵션 중 선택.<br><br>🍽️ <b>식당·카페</b><br>· Pison Ubud — 우붓 최고 카페. 논 뷰 테라스, 포크 벨리 나시고랭·레드벨벳 와플. 줄 서는 집. Jl. Monkey Forest. <a href=https://maps.google.com/?q=Pison+Ubud>구글맵</a><br>· Naughty Nuri's — 1995년 원조 폭립 와룽. 텐더한 BBQ, 마티니 유명. 2인 약 4~6만원. Jl. Raya Sanggingan 88X. 11:00~22:00. <a href=https://maps.google.com/?cid=ChIJ0xemf0Y90i0RR2RPyU-sow0>구글맵</a><br>· Ibu Oka — 우붓 바비 굴링 원조. 11시 오픈, 오후 일찍 품절. 2인 약 1만5천원. Jl. Suweta. 일찍 갈 것. <a href=https://maps.google.com/?q=Ibu+Oka+Ubud+Jl+Suweta>구글맵</a><br>· Ubud Shanti Warung — 논밭 한가운데, 나시 참푸르·가도가도. 로컬 가격, 조용한 분위기. <a href=https://maps.google.com/?q=Ubud+Shanti+Warung>구글맵</a><br><br>💆 <b>스파</b><br>· Karsa Spa — 딥티슈 90분 IDR 380,000(≈32,000원, 세전) 예정. 캄푸한 릿지 뷰, 반오픈 야외 룸. 왓츠앱 예약 필수(1주일 전). 50% 디파짓. <a href=https://maps.google.com/?q=Karsa+Spa+Ubud>구글맵</a><br>· DaLa Spa (Alaya Resort, Jl. Hanoman) — 트래블패스 30% + 오전 9~13시 자체 25% 할인. 시그니처 2시간 패키지(마사지+스크럽+플라워 바스). 예약 필수. <a href=https://maps.google.com/?q=DaLa+Spa+Alaya+Ubud+Jl+Hanoman>구글맵</a><br>· 로컬 마사지 — 우붓 시내 골목, 60분 IDR 150,000~300,000(약 1만3천~2만6천원). 워크인 가능.',
+      note:'포시즌 무료 셔틀 → 우붓 시내 자유. 아래 옵션 중 선택.<br><br>🍽️ <b>식당·카페</b><br>· Pison Ubud — 우붓 최고 카페. 논 뷰 테라스, 포크 벨리 나시고랭·레드벨벳 와플. 줄 서는 집. Jl. Monkey Forest. <a href=https://maps.google.com/?q=Pison+Ubud>구글맵</a><br>· Naughty Nuris — 1995년 원조 폭립 와룽. 텐더한 BBQ, 마티니 유명. 2인 약 4~6만원. Jl. Raya Sanggingan 88X. 11:00~22:00. <a href=https://maps.google.com/?cid=ChIJ0xemf0Y90i0RR2RPyU-sow0>구글맵</a><br>· Ibu Oka — 우붓 바비 굴링 원조. 11시 오픈, 오후 일찍 품절. 2인 약 1만5천원. Jl. Suweta. 일찍 갈 것. <a href=https://maps.google.com/?q=Ibu+Oka+Ubud+Jl+Suweta>구글맵</a><br>· Ubud Shanti Warung — 논밭 한가운데, 나시 참푸르·가도가도. 로컬 가격, 조용한 분위기. <a href=https://maps.google.com/?q=Ubud+Shanti+Warung>구글맵</a><br><br>💆 <b>스파</b><br>· Karsa Spa — 딥티슈 90분 IDR 380,000(≈32,000원, 세전) 예정. 캄푸한 릿지 뷰, 반오픈 야외 룸. 왓츠앱 예약 필수(1주일 전). 50% 디파짓. <a href=https://maps.google.com/?q=Karsa+Spa+Ubud>구글맵</a><br>· DaLa Spa (Alaya Resort, Jl. Hanoman) — 트래블패스 30% + 오전 9~13시 자체 25% 할인. 시그니처 2시간 패키지(마사지+스크럽+플라워 바스). 예약 필수. <a href=https://maps.google.com/?q=DaLa+Spa+Alaya+Ubud+Jl+Hanoman>구글맵</a><br>· 로컬 마사지 — 우붓 시내 골목, 60분 IDR 150,000~300,000(약 1만3천~2만6천원). 워크인 가능.',
       tags:['자유']}
   ]},
 
